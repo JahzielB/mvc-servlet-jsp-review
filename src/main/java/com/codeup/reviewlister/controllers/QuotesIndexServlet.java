@@ -14,8 +14,6 @@ import java.util.List;
 
 @WebServlet(name="QuotesIndexServlet", urlPatterns = "/quotes")
 public class QuotesIndexServlet extends HttpServlet {
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Config config = new Config();

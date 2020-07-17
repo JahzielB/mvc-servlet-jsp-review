@@ -1,5 +1,4 @@
 package com.codeup.reviewlister;
-import com.codeup.reviewlister.Quote;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -54,5 +53,19 @@ public class QuotesDao {
         int randomIndex = (int) Math.floor(Math.random() * quotes.size());
 
         return quotes.get(randomIndex);
+    }
+
+    public void create(String userAuthor, String userQuote) {
+        String query = "INSERT INTO quotes (author, quote)" + " values (?, ?)";
+        try {
+            PreparedStatement prepStmt = connection.prepareStatement(query);
+            prepStmt.setString(1, userAuthor);
+            prepStmt.setString(2, userQuote);
+            prepStmt.executeUpdate();
+            prepStmt.close();
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

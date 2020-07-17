@@ -15,7 +15,6 @@
 <body>
 <nav class="nav">
     <ul>
-        <li><a href="/">Home</a></li>
         <li><a href="/quotes">List All Quotes</a></li>
         <li><a href="/quotes/random">Get a random quote</a></li>
         <li><a href="/quotes/create">Create a quote</a></li>
@@ -23,13 +22,16 @@
 
 </nav>
 
-
 <div class="container">
-    <h1>Quote: ${quote.quote}</h1>
-    <p>Author: ${quote.author}</p>
 
-    <a href="/quotes/random" class="btn btn-primary">Get another random quote!</a>
+    <h1>Create a quote!</h1>
+    <form action="/quotes/create" method="post">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <label for="quote">Quote:</label>
+        <input type="text" id="quote" name="quote">
+        <button type="submit">Submit</button>
+    </form>
 </div>
-
 </body>
 </html>

@@ -17,6 +17,7 @@
     <ul>
         <li><a href="/quotes">List All Quotes</a></li>
         <li><a href="/quotes/random">Get a random quote</a></li>
+        <li><a href="/quotes/create">Create a quote</a></li>
     </ul>
 
 </nav>
